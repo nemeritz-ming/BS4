@@ -8,8 +8,7 @@ ssl._create_default_https_context = ssl._create_unverified_context
 import shopify
 
 # request shop_url
-shop_url = 'https://cbc3e9686911d1cadbce71005e884660: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@shopcider.myshopify.com' \
-           '/admin '
+shop_url = 'https://cbc3e9686911d1cadbce71005e884660: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@shopcider.myshopify.com/admin'
 shopify.ShopifyResource.set_site(shop_url)
 
 # create attributes we need
@@ -48,7 +47,7 @@ while True:
     else:
         break
 
-# output results into a csv file
+# output results into an excel file
 test_dict = {'sku': wrong_id, 'stock quantity': its_stock_quantity, 'stock state': its_stock_state}
 output_df = pd.DataFrame(test_dict)
-output_df.to_csv("./output.csv")
+output_df.to_excel("./output.xlsx")
